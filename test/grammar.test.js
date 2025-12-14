@@ -20,11 +20,13 @@ const print = (tree) => {
 
 describe('@bablr/language-en-brainFck', () => {
   describe('Instruction', () => {
-    const brainFck = buildBrainFckTag(spam`<_Instructions />`);
+    const brainFck = buildBrainFckTag(spam`<__Instructions />`);
 
     it('`>`', () => {
       expect(print(brainFck`>`)).toEqual(dedent`\
-        \n`);
+        <__>
+          instructions[]: <*IncrementPointer '>' />
+        </>\n`);
     });
   });
 });
